@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/* Write your global styles here, in PostCSS syntax */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+  h1 {
+    @apply text-xl md:text-3xl;
+  }
+
+	p {
+		@apply text-nord3;
+	}
+
+	body, html {
+		@apply bg-nord0 text-nord5;
+	}
+
+	a {
+		@apply text-nord10;
+		@apply before:content-['['] after:content-[']']
+	}
+}
