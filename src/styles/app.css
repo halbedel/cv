@@ -12,7 +12,7 @@
   }
 
 	p {
-		@apply text-nord3;
+		@apply text-nord3 mt-2 mb-5;
 	}
 
 	body, html {
