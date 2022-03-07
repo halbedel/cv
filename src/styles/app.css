@@ -8,11 +8,11 @@
 
 @layer base {
   h1 {
-    @apply text-xl md:text-3xl;
+		@apply text-xl md:text-3xl;
   }
 
-	p {
-		@apply text-nord3 mt-2 mb-5;
+	p, q {
+		@apply text-nord3 mt-2 mb-6;
 	}
 
 	body, html {
