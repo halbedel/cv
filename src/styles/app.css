@@ -12,7 +12,7 @@
   }
 
 	p, q {
-		@apply text-nord3 mt-2 mb-6;
+		@apply text-[#606c85] mt-2 mb-6;
 	}
 
 	body, html {
