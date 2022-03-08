@@ -26,7 +26,11 @@
 				rotation={[0, spin, spin + 0.04]}
 			/>
 			<SC.PerspectiveCamera position={[1, 1, 3]} zoom={1.5} />
-			<SC.OrbitControls enableZoom={false} />
+			<SC.OrbitControls
+				enableZoom={false}
+				enableDamping={true}
+				dampingFactor={0.05}
+			/>
 			<SC.AmbientLight intensity={0.75} />
 			<SC.DirectionalLight intensity={0.6} position={[-2, 3, 2]} />
 		</SC.Canvas>
