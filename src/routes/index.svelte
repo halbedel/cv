@@ -29,7 +29,7 @@
 
 <style lang="postcss">
 	section {
-		@apply h-screen w-screen;
+		@apply h-screen;
 		@apply flex flex-col items-center justify-center;
 	}
 </style>

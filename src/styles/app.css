@@ -24,3 +24,15 @@
 		@apply before:content-['['] after:content-[']']
 	}
 }
+
+:root {
+	--selection: theme('colors.nord3');
+}
+
+/* Text select color */
+::selection {
+  @apply bg-th-selection opacity-30;
+}
+::-moz-selection {
+  @apply bg-th-selection opacity-30;
+}

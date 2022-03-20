@@ -2,7 +2,11 @@ const config = {
 	content: ["./src/**/*.{html,js,svelte,ts}"],
 
 	theme: {
-		extend: {},
+		extend: {
+			colors: {
+				'th-selection': 'var(--selection)',
+			}
+		},
 		fontFamily: {
 			sans: ['Fira Code', 'sans-serif']
 		}
