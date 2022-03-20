@@ -4,8 +4,12 @@
 </script>
 
 <div class="shadow-lg">
-	<div class="bg-nord1 rounded-lg overflow-hidden flex">
-		<img src="./Passfoto.jpeg" class="h-full max-h-64" alt="card" />
+	<div class="bg-nord1 rounded-lg overflow-hidden flex flex-col md:flex-row">
+		<img
+			src="./Passfoto.jpeg"
+			class="h-full max-h-64 object-cover"
+			alt="card"
+		/>
 		<div class="relative">
 			<div class="p-8 sm:p-9 md:p-7 xl:p-9">
 				<slot />
