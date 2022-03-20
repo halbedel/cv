@@ -93,6 +93,7 @@
 	.overlay {
 		@apply absolute left-0 right-0 top-0 bottom-0 content-[''];
 		@apply rounded-full border-2 border-nord4 transition-all duration-300 pointer-events-none scale-105;
+		@apply opacity-0 md:opacity-100;
 
 		:global(.icon) {
 			@apply absolute -m-6 items-center justify-center;
@@ -101,7 +102,7 @@
 	}
 
 	:global(div.tagcloud:hover > .overlay) {
-		@apply scale-100;
+		@apply scale-100 opacity-100;
 	}
 
 	:global(div.tagcloud:hover .icon) {
