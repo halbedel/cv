@@ -64,7 +64,10 @@
 	});
 </script>
 
-<div bind:this={tagCloud} class="tagcloud max-w-[500px] mx-auto my-5 relative">
+<div
+	bind:this={tagCloud}
+	class="tagcloud max-w-[500px] mx-auto my-5 relative overflow-hidden md:overflow-visible"
+>
 	<div class="overlay">
 		<Icon
 			icon={ChevronUp}
@@ -101,11 +104,13 @@
 		}
 	}
 
-	:global(div.tagcloud:hover > .overlay) {
+	:global(div.tagcloud:hover > .overlay, div.tagcloud:focus
+			> .overlay, div.tagcloud:active > .overlay) {
 		@apply scale-100 opacity-100;
 	}
 
-	:global(div.tagcloud:hover .icon) {
+	:global(div.tagcloud:hover .icon, div.tagcloud:focus
+			.icon, div.tagcloud:active .icon) {
 		animation: bounce2 1s infinite;
 	}
 
