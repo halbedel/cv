@@ -10,13 +10,13 @@
 	<div class="slides">
 		{#each skills as skill}
 			<div class="slide">
-				<img src={skill.logo} alt={skill.name} class="w-[160px]" />
+				<img src={skill.logo} alt={skill.name} class="w-full" />
 			</div>
 		{/each}
 
 		{#each skills as skill}
 			<div class="slide">
-				<img src={skill.logo} alt={skill.name} />
+				<img src={skill.logo} alt={skill.name} class="w-full" />
 			</div>
 		{/each}
 	</div>
