@@ -120,7 +120,7 @@
 		"domain": "https://kubernetes.io/"
 	},
 	{
-		"name": "IaC",
+		"name": "Terraform",
 		"logo": "./assets/terraform.svg",
 		"domain": "https://www.terraform.io/"
 	}

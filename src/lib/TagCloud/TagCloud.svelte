@@ -45,6 +45,7 @@
 <div
 	bind:this={tagCloud}
 	class="tagcloud max-w-[500px] mx-auto my-5 relative overflow-hidden md:overflow-visible"
+	tabindex="0"
 >
 	<div class="overlay">
 		<Icon
@@ -72,19 +73,18 @@
 
 <style lang="postcss">
 	.overlay {
-		@apply absolute left-0 right-0 top-0 bottom-0 content-[''];
-		@apply rounded-full border-2 border-nord4 transition-all duration-300 pointer-events-none scale-105;
-		@apply opacity-0 md:opacity-100;
+		@apply absolute left-0 right-0 top-0 bottom-0;
+		@apply transition-all duration-300 pointer-events-none scale-105;
+		@apply opacity-0;
 
 		:global(.icon) {
 			@apply absolute -m-6 items-center justify-center;
-			@apply opacity-0;
 		}
 	}
 
 	:global(div.tagcloud:hover > .overlay, div.tagcloud:focus
 			> .overlay, div.tagcloud:active > .overlay) {
-		@apply scale-100 opacity-100;
+		@apply scale-95 opacity-100;
 	}
 
 	:global(div.tagcloud:hover .icon, div.tagcloud:focus

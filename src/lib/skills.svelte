@@ -4,7 +4,7 @@
 </script>
 
 <h1>Skills</h1>
-<div class="w-full mt-4">
+<div class="w-full mt-5">
 	<TagCloud />
 </div>
 <Slider />

@@ -32,7 +32,7 @@
 
 		&::before,
 		&::after {
-			@apply content-[''] absolute top-0 bottom-0 w-60 from-nord0 to-transparent z-10;
+			@apply content-[''] absolute top-0 bottom-0 w-20 md:w-60 from-nord0 to-transparent z-10;
 		}
 	}
 
