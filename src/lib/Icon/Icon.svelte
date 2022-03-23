@@ -6,7 +6,7 @@
 </script>
 
 <span
-	class={`${$$props.class} inline-flex`}
+	class={`${$$props.class} inline-flex icon`}
 	class:h-14={size === "l"}
 	class:w-14={size === "l"}
 	class:h-5={size === "base"}
@@ -16,3 +16,9 @@
 >
 	<svelte:component this={icon} />
 </span>
+
+<style lang="postcss">
+	:global(.icon > svg) {
+		width: 100%; /* fix for safari */
+	}
+</style>
