@@ -7,5 +7,4 @@
 <div class="w-full mt-4">
 	<TagCloud />
 </div>
-<p>Logo Slider (TODO)</p>
 <Slider />

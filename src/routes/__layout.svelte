@@ -3,9 +3,13 @@
 
 	export const load: Load = async ({ params, fetch }) => {
 		const response = await fetch("/jokes");
+
+		const responseSkills = await fetch("/skills");
+
 		return {
 			props: {
 				joke: await response.text(),
+				skills: await responseSkills.json(),
 			},
 		};
 	};
@@ -15,6 +19,9 @@
 	import "../styles/app.css";
 	import { setGlobalOptions } from "svelte-scrolling";
 	import { expoOut } from "svelte/easing";
+	import { setContext } from "svelte";
+	import { skillsKey } from "$lib/context";
+	import type { Skill } from "./skills";
 
 	setGlobalOptions({
 		easing: expoOut,
@@ -28,6 +35,9 @@
 	};
 
 	export let joke: string;
+	export let skills: Skill[];
+
+	setContext(skillsKey, skills);
 </script>
 
 <div class="container mx-auto">

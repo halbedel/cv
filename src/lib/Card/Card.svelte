@@ -6,7 +6,7 @@
 <div class="shadow-lg">
 	<div class="bg-nord1 rounded-lg overflow-hidden flex flex-col md:flex-row">
 		<img
-			src="./Passfoto.jpeg"
+			src="./assets/Passfoto.jpeg"
 			class="h-full max-h-64 object-cover"
 			alt="card"
 		/>

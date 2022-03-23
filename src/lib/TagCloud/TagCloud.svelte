@@ -1,12 +1,14 @@
 <script lang="ts">
 	import { browser } from "$app/env";
 
-	import { onDestroy, onMount } from "svelte";
+	import { getContext, onDestroy, onMount } from "svelte";
 	import TagCloud from "TagCloud";
 	import type { Event } from "three";
 	import Icon from "$lib/Icon/Icon.svelte";
 	import ChevronDown from "$lib/Icon/icons/ChevronDown.svelte";
 	import ChevronUp from "$lib/Icon/icons/ChevronUp.svelte";
+	import type { Skill } from "src/routes/skills";
+	import { skillsKey } from "$lib/context";
 
 	let tagCloud: HTMLDivElement;
 
@@ -16,35 +18,11 @@
 		}
 	};
 
+	const skills = getContext<Skill[]>(skillsKey);
+
 	onMount(() => {
 		const container = ".tagcloud";
-		const texts = [
-			"Vue",
-			"React",
-			"Svelte",
-			"CSS",
-			"SASS",
-			"postCSS",
-			"JAVA",
-			"Python",
-			"PHP",
-			"Wordpress",
-			"Spring",
-			"Node",
-			"Magento2",
-			"Sharepoint",
-			"Azure Cloud",
-			"Azure DevOps",
-			"Git",
-			"Jenkins",
-			"AWS",
-			"WebGL",
-			"Postgres",
-			"MySQL",
-			"Googel Cloud",
-			"Kubernetes",
-			"IaC",
-		];
+		const texts = skills.map((s) => s.name);
 		const options = {
 			radius: tagCloud.clientWidth / 2,
 			keep: false,

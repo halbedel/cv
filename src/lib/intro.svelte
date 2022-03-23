@@ -1,6 +1,6 @@
 <script lang="ts">
-	import * as THREE from "three";
-	import * as SC from "svelte-cubed";
+	// import * as THREE from "three";
+	// import * as SC from "svelte-cubed";
 	import Icon from "./Icon/Icon.svelte";
 	import Mail from "./Icon/icons/Mail.svelte";
 	import Home from "./Icon/icons/Home.svelte";
@@ -11,9 +11,9 @@
 
 	let spin = 0;
 
-	SC.onFrame(() => {
-		spin += 0.01;
-	});
+	// SC.onFrame(() => {
+	// 	spin += 0.01;
+	// });
 </script>
 
 <div class="flex flex-col">
@@ -55,7 +55,7 @@
 </div>
 
 <div class="relative h-44 w-full m7-6">
-	​<SC.Canvas antialias alpha>
+	<!-- ​<SC.Canvas antialias alpha>
 		<SC.Mesh
 			geometry={new THREE.BoxGeometry()}
 			material={new THREE.MeshStandardMaterial({ color: 0xb48ead })}
@@ -69,5 +69,5 @@
 		/>
 		<SC.AmbientLight intensity={0.75} />
 		<SC.DirectionalLight intensity={0.9} position={[-2, 3, 2]} />
-	</SC.Canvas>
+	</SC.Canvas> -->
 </div>
