@@ -37,6 +37,7 @@
   @apply bg-th-selection opacity-30;
 }
 
+/* Set global focus color */
 *:focus {
 	@apply border-transparent outline-none ring-2 ring-nord3 rounded-sm;
 }
