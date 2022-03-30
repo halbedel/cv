@@ -33,17 +33,19 @@
 		&::before,
 		&::after {
 			@apply content-[''] absolute top-0 bottom-0 w-20 md:w-60 from-nord0 to-transparent z-10;
+			@apply pointer-events-none;
 			--tw-gradient-to: rgba(46, 52, 64, 0); /* fix for safari */
 		}
 	}
 
 	.slides {
-		@apply flex w-[3520px];
+		@apply flex w-[4000px];
 		animation: 30s linear 0s infinite normal none running slide;
 	}
 
 	.slide {
 		@apply flex flex-shrink-0 justify-center items-center w-[160px] p-10;
+		@apply hover:scale-150 transition-transform cursor-pointer;
 	}
 
 	.description {
@@ -55,7 +57,7 @@
 			transform: translateX(0);
 		}
 		100% {
-			transform: translateX(-4000px);
+			transform: translateX(-100%);
 		}
 	}
 </style>
