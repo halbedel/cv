@@ -76,24 +76,32 @@
 		@apply absolute left-0 right-0 top-0 bottom-0;
 		@apply transition-all duration-300 pointer-events-none scale-105;
 		@apply opacity-0;
+	}
 
-		:global(.icon) {
+	:global {
+		.overlay .icon {
 			@apply absolute -m-6 items-center justify-center;
 		}
-	}
 
-	:global(div.tagcloud:hover > .overlay, div.tagcloud:focus
-			> .overlay, div.tagcloud:active > .overlay) {
-		@apply scale-95 opacity-100;
-	}
+		div.tagcloud:hover > .overlay,
+		div.tagcloud:focus > .overlay,
+		div.tagcloud:active > .overlay {
+			@apply scale-95 opacity-100;
+		}
 
-	:global(div.tagcloud:hover .icon, div.tagcloud:focus
-			.icon, div.tagcloud:active .icon) {
-		animation: bounce2 1s infinite;
-	}
+		div.tagcloud:focus {
+			@apply border-transparent outline-0 ring-2 ring-nord1 rounded-md;
+		}
 
-	:global(span.tagcloud--item) {
-		@apply antialiased hover:cursor-pointer hover:bg-nord14 hover:p-2 hover:rounded-md hover:text-nord0 select-none;
+		div.tagcloud:hover .icon,
+		div.tagcloud:focus .icon,
+		div.tagcloud:active .icon {
+			animation: bounce2 1s infinite;
+		}
+
+		span.tagcloud--item {
+			@apply antialiased hover:cursor-pointer hover:bg-nord14 hover:p-2 hover:rounded-md hover:text-nord0 select-none;
+		}
 	}
 
 	@keyframes bounce2 {
