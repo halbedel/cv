@@ -89,10 +89,6 @@
 			@apply scale-95 opacity-100;
 		}
 
-		div.tagcloud:focus {
-			@apply border-transparent outline-0 ring-2 ring-nord1 rounded-md;
-		}
-
 		div.tagcloud:hover .icon,
 		div.tagcloud:focus .icon,
 		div.tagcloud:active .icon {

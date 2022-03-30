@@ -36,3 +36,7 @@
 ::-moz-selection {
   @apply bg-th-selection opacity-30;
 }
+
+*:focus {
+	@apply border-transparent outline-0 ring-2 ring-nord3 rounded-sm;
+}
