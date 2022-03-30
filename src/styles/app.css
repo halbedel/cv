@@ -39,5 +39,5 @@
 
 /* Set global focus color */
 *:focus {
-	@apply border-transparent outline-none ring-2 ring-nord3 rounded-sm;
+	@apply border-transparent ring-0 outline-none outline-2 outline-nord3 rounded-sm;
 }

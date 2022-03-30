@@ -83,6 +83,10 @@
 			@apply absolute -m-6 items-center justify-center;
 		}
 
+		div.tagcloud:focus {
+			@apply outline-none md:outline-2 md:outline-nord3;
+		}
+
 		div.tagcloud:hover > .overlay,
 		div.tagcloud:focus > .overlay,
 		div.tagcloud:active > .overlay {
