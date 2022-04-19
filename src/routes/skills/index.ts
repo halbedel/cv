@@ -1,4 +1,3 @@
-import type { RequestHandler } from "@sveltejs/kit";
 import api from "./skills.json";
 
 export type Skill = {
@@ -7,10 +6,11 @@ export type Skill = {
 	domain: string
 }
 
-export const get: RequestHandler<Record<string, string>, Skill[]> = async () => {
-
+export const get = async () => {
 	return {
 		status: 200,
-		body: api
+		body: {
+			skills: api
+		}
 	}
 }

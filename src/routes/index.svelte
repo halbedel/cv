@@ -1,35 +1,49 @@
 <script lang="ts">
-	import { scrollTo, scrollRef } from "svelte-scrolling";
-	import Intro from "$lib/intro.svelte";
-	import Experience from "$lib/experience.svelte";
-	import Skills from "$lib/skills.svelte";
-	import Private from "$lib/private.svelte";
-
-	const sections = [
-		{ name: "intro", component: Intro },
-		{ name: "experience", component: Experience },
-		{ name: "skills", component: Skills },
-		{ name: "private", component: Private },
-	];
+	import Icon from "$lib/Icon/Icon.svelte";
+	import Mail from "$lib/Icon/icons/Mail.svelte";
+	import Home from "$lib/Icon/icons/Home.svelte";
+	import Phone from "$lib/Icon/icons/Phone.svelte";
+	import Cake from "$lib/Icon/icons/Cake.svelte";
+	import Card from "$lib/Card/Card.svelte";
+	import LockClosed from "$lib/Icon/icons/LockClosed.svelte";
 </script>
 
-{#each sections as section, index (index)}
-	<section use:scrollRef={section.name}>
-		<svelte:component this={section.component} />
+<div class="flex flex-col">
+	<div>
+		<h1>Bernhard Mühl</h1>
+		<p>Full Stack Developer / Software Architect</p>
 
-		{#if index === sections.length - 1}
-			<!-- svelte-ignore a11y-missing-attribute -->
-			<a class="mt-6" use:scrollTo={sections[0].name}>go to top</a>
-		{:else}
-			<!-- svelte-ignore a11y-missing-attribute -->
-			<a class="mt-6" use:scrollTo={sections[index + 1].name}>next</a>
-		{/if}
-	</section>
-{/each}
+		<Card>
+			<div class="flex flex-col items-start">
+				<div class="flex items-center mb-4">
+					<Icon icon={Mail} />
+					<a href="mailto:bernhard.muehl@gmail.com" class="ml-4"
+						>bernhard.muehl@gmail.com</a
+					>
+				</div>
+				<div class="flex items-center mb-4">
+					<Icon icon={Phone} />
+					<a href="tel:+436605090135" class="ml-4">+43 660 *********</a>
+				</div>
+				<div class="flex items-center mb-4">
+					<Icon icon={Home} />
+					<span class="ml-4">
+						************** ******<br />
+						1090 Vienna<br />
+					</span>
+				</div>
+				<div class="flex items-center">
+					<Icon icon={Cake} />
+					<span class="ml-4">********</span>
+				</div>
+			</div>
+		</Card>
 
-<style lang="postcss">
-	section {
-		@apply h-screen;
-		@apply flex flex-col items-center justify-center;
-	}
-</style>
+		<p class="text-xs">
+			Use unlock button (<Icon icon={LockClosed} size="xs" />) to show sensitive
+			information.
+		</p>
+	</div>
+</div>
+
+<a sveltekit:prefetch href="/experience">next</a>

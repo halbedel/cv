@@ -4,16 +4,11 @@
 	import { getContext } from "svelte";
 
 	const skills = getContext<Skill[]>(skillsKey);
+	let slides;
 </script>
 
 <div class="slider">
-	<div class="slides">
-		{#each skills as skill}
-			<div class="slide">
-				<img src={skill.logo} alt={skill.name} class="w-full" />
-			</div>
-		{/each}
-
+	<div class="slides" bind:this={slides}>
 		{#each skills as skill}
 			<div class="slide">
 				<img src={skill.logo} alt={skill.name} class="w-full" />
@@ -27,7 +22,6 @@
 <style lang="postcss">
 	.slider {
 		@apply flex flex-col w-screen relative;
-		@apply overflow-hidden;
 		@apply before:left-0 before:bg-gradient-to-r after:right-0 after:bg-gradient-to-l;
 
 		&::before,
@@ -39,13 +33,19 @@
 	}
 
 	.slides {
-		@apply flex w-[4000px];
-		animation: 30s linear 0s infinite normal none running slide;
+		@apply flex w-full overflow-y-hidden overflow-x-scroll;
+		/* animation: 30s linear 0s infinite normal none running slide; */
+		-ms-overflow-style: none; /* for Internet Explorer, Edge */
+		scrollbar-width: none; /* for Firefox */
+	}
+
+	.slides::-webkit-scrollbar {
+		display: none; /* for Chrome, Safari, and Opera */
 	}
 
 	.slide {
 		@apply flex flex-shrink-0 justify-center items-center w-[160px] p-10;
-		@apply hover:scale-150 transition-transform cursor-pointer;
+		@apply hover:scale-150 transition-transform cursor-pointer select-none;
 	}
 
 	.description {

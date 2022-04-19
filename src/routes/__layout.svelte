@@ -1,15 +1,13 @@
 <script context="module" lang="ts">
 	import type { Load } from "@sveltejs/kit";
 
-	export const load: Load = async ({ params, fetch }) => {
+	export const load: Load = async ({ params, fetch, url }) => {
 		const response = await fetch("/jokes");
-
-		const responseSkills = await fetch("/skills");
 
 		return {
 			props: {
 				joke: await response.text(),
-				skills: await responseSkills.json(),
+				url,
 			},
 		};
 	};
@@ -17,17 +15,7 @@
 
 <script lang="ts">
 	import "../styles/app.css";
-	import { setGlobalOptions } from "svelte-scrolling";
-	import { expoOut } from "svelte/easing";
-	import { setContext } from "svelte";
-	import { skillsKey } from "$lib/context";
-	import type { Skill } from "./skills";
-
-	setGlobalOptions({
-		easing: expoOut,
-		offset: 0,
-		duration: 800,
-	});
+	import PageTransition from "$lib/PageTransition/PageTransition.svelte";
 
 	const fetchJoke = async () => {
 		const response = await fetch("/jokes");
@@ -35,13 +23,13 @@
 	};
 
 	export let joke: string;
-	export let skills: Skill[];
-
-	setContext(skillsKey, skills);
+	export let url: URL;
 </script>
 
 <div class="container mx-auto">
-	<slot />
+	<PageTransition {url}>
+		<slot />
+	</PageTransition>
 </div>
 
 <footer class="py-6 flex items-center flex-col bg-nord1">

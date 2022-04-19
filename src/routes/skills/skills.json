@@ -1,7 +1,7 @@
 [
 	{
 		"name": "Vue",
-		"logo": "https://vuejs.org/logo.svg",
+		"logo": "./assets/vue.svg",
 		"domain": "https://vuejs.org/"
 	},
 	{
@@ -11,7 +11,7 @@
 	},
 	{
 		"name": "Svelte",
-		"logo": "https://svelte.dev/svelte-logo.svg",
+		"logo": "./assets/svelte.svg",
 		"domain": "https://svelte.dev/"
 	},
 	{

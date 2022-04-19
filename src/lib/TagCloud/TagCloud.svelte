@@ -30,7 +30,7 @@
 			maxSpeed: "fast",
 		};
 
-		TagCloud(container, texts, options);
+		TagCloud(tagCloud, texts, options);
 
 		document.addEventListener("click", tagClick);
 	});
