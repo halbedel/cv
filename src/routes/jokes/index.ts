@@ -2,7 +2,7 @@
 export const get = async () => {
 
 	const response = await fetch(
-		"https://v2.jokeapi.dev/joke/Programming?blacklistFlags=racist,sexist,explicit"
+		"https://sv443.net/jokeapi/v2/joke/Programming?blacklistFlags=racist,sexist,explicit"
 	);
 
 	if (response.status === 200) {

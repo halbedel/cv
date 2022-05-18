@@ -1,10 +1,24 @@
 <script lang="ts">
 	import { skillsKey } from "$lib/context";
 	import type { Skill } from "src/routes/skills";
-	import { getContext } from "svelte";
+	import { getContext, onMount } from "svelte";
 
 	const skills = getContext<Skill[]>(skillsKey);
-	let slides;
+	let slides: HTMLDivElement;
+
+	onMount(() => {
+		const loop = () => {
+			if (slides) {
+				slides.scrollLeft += 2;
+
+				if (slides.scrollWidth - slides.clientWidth === slides.scrollLeft) {
+					slides.scrollLeft = 0;
+				}
+			}
+			requestAnimationFrame(loop);
+		};
+		loop();
+	});
 </script>
 
 <div class="slider">
@@ -45,7 +59,10 @@
 
 	.slide {
 		@apply flex flex-shrink-0 justify-center items-center w-[160px] p-10;
-		@apply hover:scale-150 transition-transform cursor-pointer select-none;
+
+		img {
+			@apply hover:scale-150 transition-transform cursor-pointer select-none;
+		}
 	}
 
 	.description {
